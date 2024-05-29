@@ -1,9 +1,20 @@
 {
-    "welcome": "Welcome to Calculator!",
-    "invalid_number": "Hm... that doesn't look like a valid numnber.",
-    "first_number": "What's the first number?",
-    "second_number": "What's the second number?",
-    "operations": "What operation would you like to perform?\n1) Add 2) Subtract 3) Multiply 4) Divide",
-    "invalid_operation": "You must choose 1, 2, 3, or 4",
-    "another_one": "Would you like to perform another calculation?"
+    "en": {
+        "welcome": "Welcome to Calculator!",
+        "invalid_number": "Hm... that doesn't look like a valid numnber.",
+        "first_number": "What's the first number?",
+        "second_number": "What's the second number?",
+        "operations": "What operation would you like to perform?\n1) Add 2) Subtract 3) Multiply 4) Divide",
+        "invalid_operation": "You must choose 1, 2, 3, or 4",
+        "another_one": "Would you like to perform another calculation?"
+    },
+    "jp": {
+        "welcome": "シンプルな計算プログラムへようこそ！",
+        "invalid_number": "数字を入力して下さい",
+        "first_number": "1つ目の番号選んで下さい",
+        "second_number": "2つ目の番号を選んで下さい",
+        "operations": "和差積商のうち、どれにしますか?\n1) 足し算 2) 引き算 3) 掛け算 4) 割り算",
+        "invalid_operation": "1，2，3，4の内の数字を一つ選んで下さい",
+        "another_one": "また計算しますか?"
+    }
 }

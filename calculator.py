@@ -1,9 +1,15 @@
 import json
 
+LANGUAGE = 'jp'
+
 with open('message.json', 'r') as file:
     MESSAGES = json.load(file)
 
-def prompt(message):
+def messages(message, lang):
+    return MESSAGES[lang][message]
+
+def prompt(key):
+    message = messages(key, LANGUAGE)
     print(f"==> {message}")
 
 def invalid_number(number_str):
@@ -14,30 +20,30 @@ def invalid_number(number_str):
 
     return False
 
-prompt(MESSAGES['welcome'])
+prompt('welcome')
 
 
 # keep repeating
 while True:
-    prompt(MESSAGES['first_number'])
+    prompt('first_number')
     number1 = input()
 
     while invalid_number(number1):
-        prompt(MESSAGES['invalid_number'])
+        prompt('invalid_number')
         number1 = input()
 
-    prompt(MESSAGES['second_number'])
+    prompt('second_number')
     number2 = input()
 
     while invalid_number(number2):
-        prompt(MESSAGES['invalid_number'])
+        prompt('invalid_number')
         number2 = input()
 
-    prompt(MESSAGES['operations'])
+    prompt('operations')
     operation = input()
 
     while operation not in ["1", "2", "3", "4"]:
-        prompt(MESSAGES['invalid_operation'])
+        prompt('invalid_operation')
         operation = input()
 
     match operation:
@@ -50,10 +56,13 @@ while True:
         case "4":
             output = int(number1) / int(number2)
 
-    prompt(f"The result is {output}")
+    if (LANGUAGE == "en"):
+        print(f'=> The result is {output}')
+    else:
+        print(f'=> 合計は{output}です')
     
     # ask again
-    prompt(MESSAGES["another_one"])
+    prompt("another_one")
     answer = input().lower()
     if (answer and answer[0] != "y") or answer == "":
         break
